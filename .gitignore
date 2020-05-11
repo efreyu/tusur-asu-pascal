@@ -2,6 +2,9 @@
 .idea
 .vc
 
+# build folders
+cmake-build-*
+
 # ignore by ext
 *.doc
 *.pdf
