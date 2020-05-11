@@ -1,0 +1,7 @@
+# ignore IDE's
+.idea
+.vc
+
+# ignore by ext
+*.doc
+*.pdf
