@@ -30,8 +30,8 @@ enable_language(Pascal)
 project(${APPLICATION_NAME} LANGUAGES Pascal)
 enable_testing()
 
-add_executable(example
-        src/example.pas
+add_executable(exam1_6
+        src/exam1_6.pas
         )
-add_test(NAME MainTest COMMAND bash -c "$<TARGET_FILE:example> <<< q")
+add_test(NAME MainTest COMMAND bash -c "$<TARGET_FILE:exam1_6> <<< q")
 set_tests_properties(MainTest PROPERTIES PASS_REGULAR_EXPRESSION "Program name: MainTest")
