@@ -19,32 +19,26 @@ begin
     write('Введите n > 0: ');
     readln(n);
   until n > 0;
-//  while n <= 0 do
-//  begin
-//    write('Введите n > 0: ');
-//    readln(n);
-//  end;
-  while k < n do
-  begin
-    inc(i);
-    j := 1;
-    b := true;
-    while (j < i div 2) and (b) do
-    begin
-      inc(j);
+  {Используем цикл для вычисления n-количества простых чисел, путем прохода через чикл n-раз}
+  For i := 1 to n do
+  Begin
+    j := 2;
+    b := true; {Во вложенном цикле используется флаг-b для выхода из него}
+    While ( j < i div 2) and (b) do
+    Begin
       if i mod j = 0 then b := false;
-    end;
-    if b then
-    begin
-      pr := pr * i;
-      writeLn('*', i);
-      inc(k);
-    end;
-  end;
-  write(' = ', pr);
+      inc(j);
+    End;
+    {В случае получения необходимого значения мы опираясь на флаг-b произодим математическую операцию}
+    if b then pr := pr * i;
+  End;
+
+  write('Произведение первых ', n, ' простых чисел является: ', pr);
   readln;
 end;
 
+
+{/**Main**/}
 begin
   WriteLn('Задача 1');
   TaskOne();
