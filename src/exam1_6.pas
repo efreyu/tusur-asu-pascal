@@ -4,14 +4,14 @@ procedure TaskOne;
 {Вариант 6, Задача 1
 Дано натуральное n > 0. Найти произведение первых n простых чисел.
 Подсказка: используйте булевскую функцию для проверки, является число простым числом или нет.}
-var n, i, j, k :integer;
-  pr :longint;
-  b :boolean;
+var n, i, j, k :Integer;
+  result :LongInt;
+  b :Boolean;
 begin
   {Получаем натральное число, защищаем от ввода некорректного значения}
   repeat
     write('Введите n > 0: ');
-    readln(n);
+    ReadLn(n);
   until n > 0;
   {Используем цикл для вычисления n-количества простых чисел, путем прохода через чикл n-раз}
   for i := 1 to n do
@@ -21,14 +21,14 @@ begin
     while ( j < i div 2) and (b) do
     begin
       if i mod j = 0 then b := false;
-      inc(j);
+      Inc(j);
     end;
     {В случае получения необходимого значения мы опираясь на флаг-b произодим математическую операцию}
-    if b then pr := pr * i;
+    if b then result := result * i;
   end;
 
-  write('Произведение первых ', n, ' простых чисел является: ', pr);
-  readln;
+  WriteLn('Произведение первых ', n, ' простых чисел является: ', result);
+
 end;
 
 procedure TaskTwo();
@@ -40,12 +40,12 @@ begin
   {Получаем натральное число, защищаем от ввода некорректного значения}
   repeat
     write('Введите строку: ');
-    readln(s);
+    ReadLn(s);
   until Length(s) > 0;
   {В цикле проходим по всем элементам строки сверяя их с условием}
   for i:=length(s) downto 1 do
     if s[i] in ['a'..'z','0'..'9'] then delete(s,i,1);
-    writeLn('Результат очистки строки: ', s);
+    WriteLn('Результат очистки строки: ', s);
 end;
 
 

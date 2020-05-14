@@ -1,0 +1,44 @@
+name: Linux build
+
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+      - '.gitignore'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+      - '.gitignore'
+
+jobs:
+
+  build:
+
+    name: Ubuntu 18.04
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Get repository name.
+        run: echo ::set-env name=REPO_NAME::${GITHUB_REPOSITORY##*/}
+
+      - name: Apt install. 🏗
+        shell: bash
+        run: |
+          sudo apt-get update -y
+          sudo apt-get dist-upgrade -y
+          sudo apt-get install -y git curl wget cmake wget fpc
+
+
+      - name: Clone. 🚀
+        uses: actions/checkout@v1
+        with:
+          submodules: recursive
+          path: ${{ env.REPO_NAME }}
+
+      - name: Build. 🔧
+        shell: bash
+        run: |
+          mkdir build && cd build \
+          && cmake -DCMAKE_BUILD_TYPE=Release .. && make -j$(nproc) \
+          && ls
