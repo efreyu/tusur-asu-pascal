@@ -1,27 +1,31 @@
-# tusur-asu-pascal
+![Linux build](https://github.com/efreyu/tusur-asu-pascal/workflows/Linux%20build/badge.svg?branch=master)
 
-####Requirements: 
+##### The repository contains student work for my university course.
+
+English | [Russian](https://github.com/efreyu/tusur-asu-pascal/blob/master/README_RU.md)
+
+#### Requirements: 
 `cmake` and `fpc`
-####Installation:
-linux
+#### Installation:
+##### linux
 ```bash
 apt install cmake fpc
 ```
-MacOS
+##### MacOS
 ```bash
 brew install cmake fpc
 ```
-####Build:
+#### Build:
 ```bash
 mkdir build
 cd build
 cmake ..
 make
 ```
-####Usage:
+#### Usage:
 Just run binary in your build folder `./example_name`.
  
-This repo contains CMake modules that identify and allow to use the freepascal compiler for CMake. It also contains a test project to demonstrate how to use CMake.
+This repo contains CMake modules that identify and allow to use the freepascal compiler for CMake.
 
 Credits for the CMake modules go to Vittorio Giovara
-See also the hedgewars (https://github.com/hedgewars/hw) project
+See also the [hedgewars](https://github.com/hedgewars/hw) project
