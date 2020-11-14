@@ -7,7 +7,7 @@ English | [Russian](https://github.com/efreyu/tusur-asu-pascal/blob/master/READM
 #### Requirements: 
 `cmake` and `fpc`
 #### Installation:
-##### linux
+##### Linux
 ```bash
 apt install cmake fpc
 ```
